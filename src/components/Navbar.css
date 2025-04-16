@@ -1,0 +1,25 @@
+.navbar {
+    background: black;
+    color: white;
+    display: flex;
+    padding: 15px 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .filters select, .filters input[type="range"] {
+    padding: 5px;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
