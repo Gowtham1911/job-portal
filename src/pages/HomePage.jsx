@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import JobCard from "../components/JobCard";
+import Dashboard from "../components/Dashboard"; // ✅ Import your dashboard
 import "./HomePage.css";
 
 const jobs = [
@@ -29,13 +30,18 @@ const jobs = [
     location: "New York, NY",
     date: "29 Jan, 2023",
   },
-  // Add more jobs as needed...
 ];
 
 const HomePage = () => {
+  const [showDashboard, setShowDashboard] = useState(false);
+
+  const handleProfileClick = () => {
+    setShowDashboard(!showDashboard);
+  };
+
   return (
     <div className="homepage-container">
-      <Navbar />
+      <Navbar onProfileClick={handleProfileClick} />
       <div className="main-section">
         <Sidebar />
         <div className="job-section">
@@ -47,6 +53,16 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+
+      {/* ✅ Popup Dashboard */}
+      {showDashboard && (
+        <div className="dashboard-popup">
+          <div className="popup-overlay" onClick={() => setShowDashboard(false)} />
+          <div className="popup-content">
+            <Dashboard />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

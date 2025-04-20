@@ -1,25 +1,52 @@
 .navbar {
-    background: black;
-    color: white;
-    display: flex;
-    padding: 15px 20px;
-    align-items: center;
-    justify-content: space-between;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: #858484;
   
-  .filters {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .filters select, .filters input[type="range"] {
-    padding: 5px;
-  }
-  
-  .profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
+  color: white;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.filters {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.filters select {
+  padding: 5px 8px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+}
+
+.filters input[type="range"] {
+  accent-color: #ffffff;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.profile:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.avatar-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

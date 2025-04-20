@@ -1,39 +1,148 @@
-/* Make the page take full height */
+/* src/pages/HomePage.css */
+
+/* Layout: full height with nice background */
 .homepage-container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Make the main section fill remaining space */
-  .main-section {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-  }
-  
-  /* Sidebar styling */
-  .sidebar {
-    width: 300px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-  }
-  
-  /* Job section styling */
-  .job-section {
-    flex: 1;
-    width: 1300px;
-    padding: 20px;
-    overflow-y: auto;
-    background-color: #fff;
-  }
-  
-  /* Cards container */
-  .job-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d') no-repeat center center/cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f1f1f1;
+  overflow: hidden;
+}
+
+/* Main content: flex row */
+.main-section {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  padding: 10px;
+  gap: 10px;
+}
+
+/* Sidebar: Glass effect with bright text */
+.sidebar {
+  width: 280px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 20px;
+  overflow-y: auto;
+  color: #e0e0e0;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 8px;
+}
+
+.sidebar label {
+  display: block;
+  margin: 10px 0;
+  cursor: pointer;
+  color: #f5f5f5;
+}
+
+.sidebar input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Job section with brighter glass effect */
+.job-section {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 25px;
+  overflow-y: auto;
+  color: #f2f2f2;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+}
+
+.job-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 10px;
+}
+
+/* Job cards layout */
+.job-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* Job card style with clear contrast */
+.job-card {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f1f1f1;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.job-card:hover {
+  transform: translateY(-6px);
+  background: rgba(0, 0, 0, 0.65);
+}
+
+/* Job date, company, tags */
+.job-card .date {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  opacity: 0.85;
+}
+
+.job-card .company {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.job-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.job-card .tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: #ffffff;
+}
+
+/* Location text */
+.job-card .location {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Details button with sharp contrast */
+.details-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.details-button:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
